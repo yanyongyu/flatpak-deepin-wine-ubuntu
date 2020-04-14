@@ -1,0 +1,38 @@
+{
+  "id": "com.deepin.wine.Sdk",
+  "id-platform": "com.deepin.wine.Platform",
+  "branch": "2.18.1",
+  "runtime": "org.freedesktop.Platform/i386",
+  "runtime-version": "18.08",
+  "sdk": "org.freedesktop.Sdk/i386",
+  "build-runtime": true,
+  "separate-locales": false,
+
+  "finish-args": [
+    "--sdk=com.deepin.wine.Sdk//2.18.1",
+    "--runtime=com.deepin.wine.Platform//2.18.1"
+  ],
+
+  "modules": [
+    {
+      "name": "deepinwine",
+      "buildsystem": "simple",
+      "build-commands": ["bash ./install_flatpak.sh"],
+      "cleanup": [],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git"
+        },
+        {
+          "type": "file",
+          "path": "./p7zip_16.02+dfsg-6_i386.deb"
+        },
+        {
+          "type": "file",
+          "path": "./install_flatpak.sh"
+        }
+      ]
+    }
+  ]
+}
